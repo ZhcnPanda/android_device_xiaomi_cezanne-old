@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_cezanne.mk
+    $(LOCAL_DIR)/exthm_cezanne.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_cezanne-user \
-    dot_cezanne-userdebug \
-    dot_cezanne-eng
+    exthm_cezanne-user \
+    exthm_cezanne-userdebug \
+    exthm_cezanne-eng
