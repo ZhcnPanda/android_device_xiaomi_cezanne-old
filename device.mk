@@ -15,11 +15,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 
 # MTK-OSS
-$(call inherit-product, vendor/mediatek/opensource/mtk-builds.mk)
+$(call inherit-product, vendor/mediatek/opensource/mtk-oss.mk)
 
 # IMS
 $(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
-$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
