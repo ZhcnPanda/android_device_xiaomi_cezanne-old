@@ -24,7 +24,7 @@
   }
 ]
 
-// Assume that you are at the root directory of the Android source.
-// git clone https://github.com/dotOS-Devices/android_vendor_mediatek_ims
-// git clone https://github.com/dotOS-Devices/android_vendor_mediatek_interfaces
-// git clone https://github.com/dotOS-Devices/android_vendor_mediatek_opensource
+// Assume that you are at the root directory of the Android source. 
+// git clone https://github.com/dotOS-Devices/android_vendor_mediatek_ims vendor/mediatek/ims
+// git clone https://github.com/dotOS-Devices/android_vendor_mediatek_interfaces vendor/mediatek/interfaces
+// git clone https://github.com/dotOS-Devices/android_vendor_mediatek_opensource vendor/mediatek/opensource
