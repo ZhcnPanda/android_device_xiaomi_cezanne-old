@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<carrier_config_list xmlns:android="http://schemas.android.com/apk/res/android"/> 
 <carrier_config_list>
     <carrier_config mcc="460" mnc="03,05,11,12">
         <boolean name="carrier_volte_available_bool" value="true" />
@@ -136,4 +137,4 @@
     <carrier_config mcc="454" mnc="06,15,17">
         <boolean name="carrier_volte_available_bool" value="true" />
     </carrier_config>
-</carrier_config_list>
+</carrier_config_list> 
