@@ -66,3 +66,6 @@ persist.sys.fuse.default_fuse_enabled=false
 persist.sys.fflag.override.settings_fuse=false
 persist.device_config.storage_native_boot.fuse_enabled=false
 ro.sys.sdcardfs=true
+
+# Bluetooth
+persist.bluetooth.bluetooth_audio_hal.disabled=true 
