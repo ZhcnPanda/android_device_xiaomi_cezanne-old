@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/exthm_cezanne.mk
+    $(LOCAL_DIR)/arrow_cezanne.mk
 
 COMMON_LUNCH_CHOICES := \
-    exthm_cezanne-user \
-    exthm_cezanne-userdebug \
-    exthm_cezanne-eng
+    arrow_cezanne-user \
+    arrow_cezanne-userdebug \
+    arrow_cezanne-eng
