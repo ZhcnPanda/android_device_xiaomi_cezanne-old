@@ -358,7 +358,6 @@
         <item>3000</item>
         <item>3500</item>
         <item>4000</item>
-        <item>4500</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -376,70 +375,56 @@
         <item>5</item>
         <item>5</item>
         <item>5</item>
-        <item>17</item>
+        <item>5</item>
+        <item>15</item>
         <item>24</item>
-        <item>31</item>
-        <item>34</item>
-        <item>46</item>
-        <item>59</item>
+        <item>37</item>
+        <item>47</item>
+        <item>61</item>
         <item>76</item>
-        <item>81</item>
-        <item>82</item>
-        <item>82</item>
-        <item>82</item>
         <item>83</item>
         <item>83</item>
         <item>83</item>
-        <item>84</item>
-        <item>84</item>
-        <item>85</item>
-        <item>85</item>
-        <item>85</item>
-        <item>85</item>
-        <item>86</item>
-        <item>86</item>
         <item>87</item>
-        <item>89</item>
-        <item>90</item>
-        <item>91</item>
         <item>93</item>
-        <item>94</item>
-        <item>96</item>
-        <item>97</item>
-        <item>99</item>
-        <item>100</item>
-        <item>101</item>
-        <item>104</item>
-        <item>105</item>
-        <item>106</item>
-        <item>108</item>
-        <item>109</item>
-        <item>111</item>
-        <item>112</item>
-        <item>114</item>
-        <item>116</item>
-        <item>137</item>
-        <item>157</item>
-        <item>180</item>
-        <item>205</item>
-        <item>226</item>
-        <item>257</item>
-        <item>280</item>
-        <item>295</item>
-        <item>369</item>
-        <item>434</item>
-        <item>500</item>
-        <item>500</item>
-        <item>500</item>
+        <item>107</item>
+        <item>117</item>
+        <item>124</item>
+        <item>133</item>
+        <item>166</item>
+        <item>182</item>
+        <item>270</item>
+        <item>315</item>
+        <item>373</item>
+        <item>442</item>
+        <item>455</item>
     </integer-array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
          values in the config_screenBrightnessNits array.
          This array should be equal in size to config_screenBrightnessBacklight. -->
-    <integer-array name="config_screenBrightnessBacklight">
+    <array name="config_screenBrightnessBacklight">
+        <item>@null</item>
         <item>1</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>75</item>
+        <item>90</item>
+        <item>105</item>
+        <item>120</item>
+        <item>135</item>
+        <item>150</item>
+        <item>165</item>
+        <item>180</item>
+        <item>195</item>
+        <item>210</item>
+        <item>225</item>
+        <item>240</item>
         <item>255</item>
-    </integer-array>
+    </array>
 
     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
          values in the config_screenBrightnessBacklight array.  On OLED displays these  values
@@ -448,8 +433,26 @@
          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
-        <item>2.0</item>
-        <item>450.0</item>
+        <item>@null</item>
+        <item>4</item>
+        <item>22</item>
+        <item>30</item>
+        <item>68</item>
+        <item>95</item>
+        <item>133</item>
+        <item>165</item>
+        <item>192</item>
+        <item>218</item>
+        <item>255</item>
+        <item>290</item>
+        <item>326</item>
+        <item>352</item>
+        <item>384</item>
+        <item>399</item>
+        <item>422</item>
+        <item>432</item>
+        <item>442</item>
+        <item>455</item>
     </array>
 
     <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
