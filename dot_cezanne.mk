@@ -24,7 +24,7 @@ DEVICE_MAINTAINER := nzlov
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
-BUILD_FINGERPRINT := "Redmi/cezanne/cezanne:11/RP1A.200720.011/21.4.7:user/release-keys"
+BUILD_FINGERPRINT := "Redmi/cezanne/cezanne:11/RP1A.200720.011/V12.5.7.0.RJNCNXM:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
