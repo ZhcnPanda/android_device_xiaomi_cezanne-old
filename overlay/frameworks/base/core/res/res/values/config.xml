@@ -285,6 +285,26 @@
         <item>30</item>
     </integer-array>
 
+    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
+         values by calculating the index to use for lookup and then setting the constraint value
+         to the corresponding value of the array. The new brightening hysteresis constraint value
+         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
+         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
+         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
+         condition                       calculated index
+         value < level[0]                0
+         level[n] <= value < level[n+1]  n+1
+         level[MAX] <= value             MAX+1 -->
+    <integer-array name="config_ambientThresholdLevels">
+        <item>2</item>
+        <item>10</item>
+        <item>30</item>
+        <item>100</item>
+        <item>800</item>
+        <item>2000</item>
+        <item>4000</item>
+    </integer-array>
+
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)
@@ -358,6 +378,7 @@
         <item>3000</item>
         <item>3500</item>
         <item>4000</item>
+        <item>4500</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -371,33 +392,143 @@
          This array should have size one greater than the size of the config_autoBrightnessLevels
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
+
+    <integer-array name="autoBrightnessLcdBacklightValues">
+        <item>40</item>
+        <item>40</item>
+        <item>40</item>
+        <item>140</item>
+        <item>196</item>
+        <item>254</item>
+        <item>278</item>
+        <item>376</item>
+        <item>484</item>
+        <item>622</item>
+        <item>664</item>
+        <item>672</item>
+        <item>672</item>
+        <item>672</item>
+        <item>680</item>
+        <item>680</item>
+        <item>680</item>
+        <item>688</item>
+        <item>688</item>
+        <item>696</item>
+        <item>696</item>
+        <item>696</item>
+        <item>696</item>
+        <item>704</item>
+        <item>704</item>
+        <item>712</item>
+        <item>728</item>
+        <item>736</item>
+        <item>746</item>
+        <item>762</item>
+        <item>770</item>
+        <item>786</item>
+        <item>794</item>
+        <item>810</item>
+        <item>818</item>
+        <item>826</item>
+        <item>852</item>
+        <item>860</item>
+        <item>868</item>
+        <item>884</item>
+        <item>892</item>
+        <item>908</item>
+        <item>918</item>
+        <item>934</item>
+        <item>950</item>
+        <item>1122</item>
+        <item>1286</item>
+        <item>1474</item>
+        <item>1678</item>
+        <item>1850</item>
+        <item>2104</item>
+        <item>2292</item>
+        <item>2416</item>
+        <item>3022</item>
+        <item>3554</item>
+        <item>4095</item>
+        <item>4095</item>
+        <item>4095</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_ambientThresholdLevels. The darkening threshold is calculated as
+         lux * (1.0f - CONSTRAINT_VALUE). When the current lux is lower than this threshold,
+         the screen brightness is recalculated. See the config_ambientThresholdLevels
+         description for how the constraint value is chosen. -->
+    <integer-array name="config_ambientDarkeningThresholds">
+        <item>800</item>
+        <item>800</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+    </integer-array>
+
     <integer-array name="config_autoBrightnessDisplayValuesNits">
         <item>5</item>
         <item>5</item>
         <item>5</item>
-        <item>5</item>
-        <item>15</item>
+        <item>17</item>
         <item>24</item>
-        <item>37</item>
-        <item>47</item>
-        <item>61</item>
+        <item>31</item>
+        <item>34</item>
+        <item>46</item>
+        <item>59</item>
         <item>76</item>
+        <item>81</item>
+        <item>82</item>
+        <item>82</item>
+        <item>82</item>
         <item>83</item>
         <item>83</item>
         <item>83</item>
+        <item>84</item>
+        <item>84</item>
+        <item>85</item>
+        <item>85</item>
+        <item>85</item>
+        <item>86</item>
+        <item>86</item>
         <item>87</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
         <item>93</item>
-        <item>107</item>
-        <item>117</item>
-        <item>124</item>
-        <item>133</item>
-        <item>166</item>
-        <item>182</item>
-        <item>270</item>
-        <item>315</item>
-        <item>373</item>
-        <item>442</item>
-        <item>455</item>
+        <item>94</item>
+        <item>96</item>
+        <item>97</item>
+        <item>99</item>
+        <item>100</item>
+        <item>101</item>
+        <item>104</item>
+        <item>105</item>
+        <item>106</item>
+        <item>108</item>
+        <item>109</item>
+        <item>111</item>
+        <item>112</item>
+        <item>114</item>
+        <item>116</item>
+        <item>137</item>
+        <item>157</item>
+        <item>180</item>
+        <item>205</item>
+        <item>226</item>
+        <item>257</item>
+        <item>280</item>
+        <item>295</item>
+        <item>369</item>
+        <item>434</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
     </integer-array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
@@ -454,6 +585,40 @@
         <item>442</item>
         <item>455</item>
     </array>
+
+    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_screenThresholdLevels. The brightening threshold is calculated as
+         screenBrightness * (1.0f + CONSTRAINT_VALUE). When the new screen brightness is higher
+         than this threshold, it is applied. See the config_screenThresholdLevels description for
+         how the constraint value is chosen. -->
+    <integer-array name="config_screenBrighteningThresholds">
+        <item>0</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_screenThresholdLevels. The darkening threshold is calculated as
+         screenBrightness * (1.0f - CONSTRAINT_VALUE). When the new screen brightness is lower than
+         this threshold, it is applied. See the config_screenThresholdLevels description for how
+         the constraint value is chosen. -->
+    <integer-array name="config_screenDarkeningThresholds">
+        <item>0</item>
+    </integer-array>
+
+    <!-- Array of screen brightness threshold values. This is used for determining hysteresis
+         constraint values by calculating the index to use for lookup and then setting the
+         constraint value to the corresponding value of the array. The new brightening hysteresis
+         constraint value is the n-th element of config_screenBrighteningThresholds, and the new
+         darkening hysteresis constraint value is the n-th element of
+         config_screenDarkeningThresholds.
+         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
+         condition                       calculated index
+         value < level[0]                0
+         level[n] <= value < level[n+1]  n+1
+         level[MAX] <= value             MAX+1 -->
+    <integer-array name="config_screenThresholdLevels">
+    </integer-array>
 
     <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
          is not necessarily the same as the number of phones/logical modems supported by the device.
